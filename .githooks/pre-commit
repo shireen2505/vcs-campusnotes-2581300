@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if git diff --cached --name-only --diff-filter=ACM |
+while IFS= read -r file
+do
+    case "$file" in
+        .githooks/*) continue ;;
+    esac
+    if git show ":$file" | grep -nE 'TODO|FIXME'
+    then
+        echo "ERROR: TODO or FIXME found in $file"
+        exit 1
+    fi
+done
+then
+    :
+else
+    echo "Commit blocked: remove TODO/FIXME before committing."
+    exit 1
+fi
