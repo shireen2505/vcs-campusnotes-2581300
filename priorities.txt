@@ -1,4 +1,5 @@
-Today's Priorities
+# Study Priorities
+
 1. Complete Git assignment
 2. Revise Data Structures
 3. Review weekly timetable
