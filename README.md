@@ -21,7 +21,21 @@ Made for the Version Control System (CSE25303) course, Assignment 2.
    git clone https://github.com/shireen2505/vcs-campusnotes-2581300.git
    ```
 2. Open any `.txt` file and add a new line for each subject, class or goal.
-3. Commit the change with a clear message and push it.
+   Keep the same format as the existing lines, for example in `timetable.txt`:
+   ```
+   Tuesday - Version Control System
+   ```
+3. Save the file, then commit and push the change:
+   ```bash
+   git status                      # see which files changed
+   git add timetable.txt           # stage the file you edited
+   git commit -m "docs: add Tuesday to timetable"
+   git push                        # send the commit to GitHub
+   ```
+4. Get the latest changes from GitHub before you start working next time:
+   ```bash
+   git pull
+   ```
 
 ## Contributing
 Fork the repository, create a branch named `feature/<your-name>-<change>`, make your change and open a pull request against `main`.
